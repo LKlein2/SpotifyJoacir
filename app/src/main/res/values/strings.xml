@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SpotifyJoacir</string>
+    <string name="buttonLogin">Login</string>
 </resources>
