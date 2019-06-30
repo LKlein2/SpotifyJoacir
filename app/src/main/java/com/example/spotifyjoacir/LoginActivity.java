@@ -14,9 +14,9 @@ import com.spotify.sdk.android.authentication.AuthenticationResponse;
 public class LoginActivity extends AppCompatActivity {
 
 
-    @SuppressWarnings("SpellCheckingInspection")
-    public static final String CLIENT_ID = "1d7edefde74f45beb393a66257a0ba49";
-    @SuppressWarnings("SpellCheckingInspection")
+
+    public static final String CLIENT_ID = "5de6930c8a744270851a5064c7ff6333";
+
     private static final String REDIRECT_URI = "http://localhost:8888/callback";
     private static final String TAG = "Spotify " + LoginActivity.class.getSimpleName();
     private static final int REQUEST_CODE = 1337;
@@ -29,7 +29,6 @@ public class LoginActivity extends AppCompatActivity {
 
         Button mLoginButton = (Button)findViewById(R.id.buttonLogin);
         mLoginButton.setOnClickListener(mListener);
-
     }
 
     private void openLoginWindow() {
@@ -77,7 +76,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     View.OnClickListener mListener = new View.OnClickListener(){
-
         @Override
         public void onClick(View view) {
             switch (view.getId()){

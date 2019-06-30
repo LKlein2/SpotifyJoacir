@@ -39,6 +39,5 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation project(':spotify-auth-release-1.1.0')
     implementation project(':spotify-player-24-noconnect-2.20b')
-
-    api 'com.github.kaaes:spotify-web-api-android:0.4.1'
+    implementation 'com.github.kaaes:spotify-web-api-android:0.4.1'
 }
