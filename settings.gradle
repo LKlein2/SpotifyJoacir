@@ -1,1 +1,1 @@
-include ':app', ':spotify-app-remote-release-0.6.1', ':spotify-auth-release-1.1.0', ':spotify-player-24-noconnect-2.20b'
+include ':app', ':spotify-app-remote-release-0.6.1', ':spotify-auth-release-1.1.0', ':spotify-player-24-noconnect-2.20b', ':spotify-android-auth-1.0.0', ':spotify-web-api-android-0.4.1'
