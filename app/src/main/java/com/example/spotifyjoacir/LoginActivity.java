@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
 
         AuthenticationRequest.Builder builder = new AuthenticationRequest.Builder(CLIENT_ID, AuthenticationResponse.Type.TOKEN,REDIRECT_URI);
 
-        builder.setScopes(new String[]{"user-top-read"});
+        builder.setScopes(new String[]{"user-top-read", "user-read-recently-played", });
         AuthenticationRequest request = builder.build();
 
         AuthenticationClient.openLoginActivity(this, REQUEST_CODE, request);
