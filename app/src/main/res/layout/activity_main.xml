@@ -61,14 +61,20 @@
                             android:layout_width="157dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            tools:srcCompat="@tools:sample/avatars[9]" />
+                            tools:srcCompat="@tools:sample/avatars[9]"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
 
                         <ImageView
                             android:id="@+id/imgTrack3"
                             android:layout_width="157dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            tools:srcCompat="@tools:sample/avatars[8]" />
+                            tools:srcCompat="@tools:sample/avatars[8]"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -81,14 +87,20 @@
                             android:layout_width="157dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            tools:srcCompat="@tools:sample/avatars[7]" />
+                            tools:srcCompat="@tools:sample/avatars[7]"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
 
                         <ImageView
                             android:id="@+id/imgTrack5"
                             android:layout_width="157dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            tools:srcCompat="@tools:sample/avatars[6]" />
+                            tools:srcCompat="@tools:sample/avatars[6]"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
 
 
                     </LinearLayout>
