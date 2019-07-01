@@ -94,7 +94,7 @@ public class SearchPager {
     public void getMyTopArtist(final onCompleteTopArtistListener listener){
 
         Map<String, Object> options = new HashMap<>();
-        options.put(SpotifyService.LIMIT, 10);
+        options.put(SpotifyService.LIMIT, 5);
 
         final ConsultaActivity listManager = ConsultaActivity.getInstance();
 
@@ -129,7 +129,7 @@ public class SearchPager {
 
     public void getMyTopTracks(final onCompleteTopTrackListener listener){
         Map<String, Object> options = new HashMap<>();
-        options.put(SpotifyService.LIMIT, 10);
+        options.put(SpotifyService.LIMIT, 5);
 
         final ConsultaActivity listManager = ConsultaActivity.getInstance();
 
