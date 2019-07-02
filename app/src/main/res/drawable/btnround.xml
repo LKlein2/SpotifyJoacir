@@ -7,7 +7,7 @@
         android:bottomRightRadius="50dp"
         />
     <solid
-        android:color="@color/colorPrimary"
+        android:color="@color/colorPrimaryDark"
         />
     <size
         android:width="270dp"

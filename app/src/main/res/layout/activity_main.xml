@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:isScrollContainer="true"
+    android:background="#000"
     tools:context=".MainActivity">
 
     <ScrollView
@@ -26,9 +27,9 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Top tracks"
-                android:textAllCaps="false"
+                android:textAllCaps="true"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="36sp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -160,9 +161,9 @@
                 android:gravity="center"
                 android:paddingTop="50px"
                 android:text="Top artists"
-                android:textAllCaps="false"
+                android:textAllCaps="true"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="36sp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -274,6 +275,10 @@
                 android:text="5. Duda Beat"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
 

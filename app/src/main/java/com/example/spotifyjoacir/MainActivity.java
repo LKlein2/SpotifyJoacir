@@ -73,8 +73,6 @@ public class MainActivity extends AppCompatActivity
         Map<String, Object> options = new HashMap<>();
         options.put(SpotifyService.LIMIT, 5);
         SpotifyError spotifyError;
-        //api.setAccessToken("BQBbWy2YcvbaHuob7iKkmeJrLsj7dYmJPCQ-djtihWEJx2nAW0BHAnx1uQWO4ELJFrn92tSHTvUMt4L9F9CxQnTdwdgIjVD87z3LsooiWRpPF3rFcELCf9LpGwayQnZUN1rOkz_thN-OILk1ENYqqhRtsbX8yJbM7LRn8A");
-        //api.setAccessToken("BQCvLsG2aGZbEJA6L5o4LypuIzwKO-0rC5n2NtQWI2AEs31lPcI_lxJ08zDMAehP1ZpLIEqdHUW6faF-nbvw4aGQUQZvyS-6Jech75ZI0Y-esLtVm49gEaLywqU9xqcQTdx6IRsg6Bii9J4KhtYITUIPJicIhb3H-dIsKZq3xHvv4-6CRZ3UekEJi8fihKsnrJZQ_Fk42hHg2wvfxBSpzfAJKyym6ME6cIoqb-8lYezEv0okGdoM_YSHc1Iq9pred7ffAnAPYVksAcmpNnjA");
         api.setAccessToken(AUTH_TOKEN);
         spotifyService = api.getService();
         spotifyService.getTopArtists(options, new SpotifyCallback<Pager<Artist>>() {

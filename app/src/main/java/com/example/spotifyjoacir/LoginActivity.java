@@ -13,8 +13,8 @@ import com.spotify.sdk.android.authentication.AuthenticationResponse;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "Spotify " + LoginActivity.class.getSimpleName();
+
     private static final int REQUEST_CODE = 1337;
-    public static final String AUTH_TOKEN = "AUTH_TOKEN";
     public static final String CLIENT_ID = "5de6930c8a744270851a5064c7ff6333";
     private static final String REDIRECT_URI = "http://localhost:8888/callback";
     private String AUTH;
@@ -24,15 +24,36 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Button mLoginButton = (Button)findViewById(R.id.buttonLogin);
+        Button mLoginButton = findViewById(R.id.buttonLogin);
         mLoginButton.setOnClickListener(mListener);
     }
 
     private void openLoginWindow() {
-
+/*
         AuthenticationRequest.Builder builder = new AuthenticationRequest.Builder(CLIENT_ID, AuthenticationResponse.Type.TOKEN,REDIRECT_URI);
 
         builder.setScopes(new String[]{"user-top-read", "user-read-recently-played", });
+        AuthenticationRequest request = builder.build();
+
+        AuthenticationClient.openLoginActivity(this, REQUEST_CODE, request);
+
+        */
+
+        AuthenticationRequest.Builder builder = new AuthenticationRequest.Builder(CLIENT_ID,AuthenticationResponse.Type.TOKEN,REDIRECT_URI);
+        builder.setScopes(new String[]{
+                "playlist-read-private",
+                "playlist-read-collaborative",
+                "playlist-modify-public",
+                "playlist-modify-private",
+                "user-follow-modify",
+                "user-follow-read",
+                "user-library-read",
+                "user-library-modify",
+                "user-read-private",
+                "user-read-birthdate",
+                "user-read-email",
+                "user-top-read"
+        });
         AuthenticationRequest request = builder.build();
 
         AuthenticationClient.openLoginActivity(this, REQUEST_CODE, request);
@@ -51,18 +72,42 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent();
-        intent.putExtra("AUTH_TOKEN", AUTH);
-        setResult(1,intent);
         super.onBackPressed();
     }
 
     @Override
-    protected void onActivityResult(int requestCode, final int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+
+        // Check if result comes from the correct activity
+        if (requestCode == REQUEST_CODE) {
+            AuthenticationResponse response = AuthenticationClient.getResponse(resultCode, intent);
+
+            switch (response.getType()) {
+                // Response was successful and contains auth token
+                case TOKEN:
+                    intent.putExtra("AUTH_TOKEN", response.getAccessToken());
+                    setResult(1,intent);
+                    onBackPressed();
+                    break;
+                case ERROR:
+                    // Handle error response
+                    break;
+
+                // Most likely auth flow was cancelled
+                default:
+                    // Handle other cases
+            }
+        }
+    }
+
+/*
+    @Override
+    protected void onActivityResult(int requestCode, final int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
 
         if(requestCode == REQUEST_CODE)        {
-            final AuthenticationResponse response = AuthenticationClient.getResponse(resultCode, data);
+            AuthenticationResponse response = AuthenticationClient.getResponse(resultCode, intent);
             switch (response.getType()) {
                 case TOKEN:
                     AUTH = response.getAccessToken();
@@ -78,4 +123,5 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     }
+    */
 }
